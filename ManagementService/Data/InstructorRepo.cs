@@ -20,12 +20,12 @@ namespace ManagementService.Data
             {
                 throw new ArgumentNullException();
             }
-           _context.Instructors.Add(ins);
+              _context.Instructors.Add(ins);
         }
 
         public void DeleteInstructor(Instructor ins)
         {
-            throw new System.NotImplementedException();
+            _context.Instructors.Remove(ins);
         }
 
         public List<Instructor> GetAll()

@@ -1,3 +1,4 @@
+using System;
 using ManagementService.Data;
 using ManagementService.Data.Abstract;
 using Microsoft.AspNetCore.Builder;
@@ -28,6 +29,7 @@ namespace ManagementService
             services.AddScoped<IClassRepo,ClassRepo>();
             services.AddScoped<IInstructorRepo,InstructorRepo>();
             services.AddControllers();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ManagementService", Version = "v1" });
