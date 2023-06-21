@@ -38,7 +38,7 @@ namespace ManagementService.Controllers
             var classItem = _classRepo.GetClassById(id);
 
             if(classItem != null)
-            {
+               {
                 return Ok(_mapper.Map<ClassReadDto>(classItem));
             }
             return NotFound();

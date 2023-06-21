@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: managements-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: managementservice
+  template:
+    metadata:
+      labels:
+        app: managementservice
+    spec:
+      containers:
+        - name: managementservice
+          image: server2121/managementservice
