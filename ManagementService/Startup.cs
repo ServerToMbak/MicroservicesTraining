@@ -1,6 +1,7 @@
 using System;
 using ManagementService.Data;
 using ManagementService.Data.Abstract;
+using ManagementService.SyncDataService.Http;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -28,6 +29,7 @@ namespace ManagementService
 
             services.AddScoped<IClassRepo,ClassRepo>();
             services.AddScoped<IInstructorRepo,InstructorRepo>();
+            services.AddHttpClient<ICommandDataClient,HttpCommandDataClient>();
             services.AddControllers();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddSwaggerGen(c =>
